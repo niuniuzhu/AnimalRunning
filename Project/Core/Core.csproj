@@ -1,0 +1,117 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>TRACE;DEBUG;KCP_NATIVE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>TRACE;KCP_NATIVE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\..\RCFramework\Core\FMath\FBounds.cs" Link="FMath\FBounds.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\FMath\Fix64.cs" Link="FMath\Fix64.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\FMath\Fix64Ex.cs" Link="FMath\Fix64Ex.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\FMath\Fix64SinLut.cs" Link="FMath\Fix64SinLut.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\FMath\Fix64TanLut.cs" Link="FMath\Fix64TanLut.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\FMath\FLine2.cs" Link="FMath\FLine2.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\FMath\FLine3.cs" Link="FMath\FLine3.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\FMath\FMat2.cs" Link="FMath\FMat2.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\FMath\FMat3.cs" Link="FMath\FMat3.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\FMath\FMat4.cs" Link="FMath\FMat4.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\FMath\FPlane.cs" Link="FMath\FPlane.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\FMath\FQuat.cs" Link="FMath\FQuat.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\FMath\FRay.cs" Link="FMath\FRay.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\FMath\FRect.cs" Link="FMath\FRect.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\FMath\FSphere.cs" Link="FMath\FSphere.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\FMath\FVec2.cs" Link="FMath\FVec2.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\FMath\FVec3.cs" Link="FMath\FVec3.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\FMath\FVec4.cs" Link="FMath\FVec4.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Math\Bounds.cs" Link="Math\Bounds.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Math\Color4.cs" Link="Math\Color4.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Math\Line2.cs" Link="Math\Line2.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Math\Line3.cs" Link="Math\Line3.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Math\Mat2.cs" Link="Math\Mat2.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Math\Mat3.cs" Link="Math\Mat3.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Math\Mat4.cs" Link="Math\Mat4.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Math\MathUtils.cs" Link="Math\MathUtils.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Math\Plane.cs" Link="Math\Plane.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Math\Quat.cs" Link="Math\Quat.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Math\Ray.cs" Link="Math\Ray.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Math\Rect.cs" Link="Math\Rect.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Math\Sphere.cs" Link="Math\Sphere.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Math\Vec2.cs" Link="Math\Vec2.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Math\Vec3.cs" Link="Math\Vec3.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Math\Vec4.cs" Link="Math\Vec4.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Misc\BitFlags.cs" Link="Misc\BitFlags.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Misc\ByteUtils.cs" Link="Misc\ByteUtils.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Misc\GuidHash.cs" Link="Misc\GuidHash.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Misc\HashtableHelper.cs" Link="Misc\HashtableHelper.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Misc\Logger.cs" Link="Misc\Logger.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Misc\MiniJSON.cs" Link="Misc\MiniJSON.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Misc\SimpleScheduler.cs" Link="Misc\SimpleScheduler.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Misc\TimeUtils.cs" Link="Misc\TimeUtils.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Net\DistendBuffer.cs" Link="Net\DistendBuffer.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Net\INetClient.cs" Link="Net\INetClient.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Net\INetServer.cs" Link="Net\INetServer.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Net\INetTransmitter.cs" Link="Net\INetTransmitter.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Net\IUserToken.cs" Link="Net\IUserToken.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Net\KCPClient.cs" Link="Net\KCPClient.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Net\KCPServer.cs" Link="Net\KCPServer.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Net\KCPUserToken.cs" Link="Net\KCPUserToken.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Net\Kcp\ByteArrayPool.cs" Link="Net\Kcp\ByteArrayPool.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Net\Kcp\IKCP.cs" Link="Net\Kcp\IKCP.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Net\Kcp\KCP.cs" Link="Net\Kcp\KCP.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Net\Kcp\KCPInterface.cs" Link="Net\Kcp\KCPInterface.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Net\Kcp\KCPNative.cs" Link="Net\Kcp\KCPNative.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Net\Kcp\KCPProxy.cs" Link="Net\Kcp\KCPProxy.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Net\LengthEncoder.cs" Link="Net\LengthEncoder.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Net\NetworkConfig.cs" Link="Net\NetworkConfig.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Net\NetworkHelper.cs" Link="Net\NetworkHelper.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Net\NetworkManager.cs" Link="Net\NetworkManager.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Net\NetworkUpdateContext.cs" Link="Net\NetworkUpdateContext.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Net\PacketAttribute.cs" Link="Net\PacketAttribute.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Net\Protocol\DTO.cs" Link="Net\Protocol\DTO.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Net\Protocol\ISerializable.cs" Link="Net\Protocol\ISerializable.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Net\Protocol\Packet.cs" Link="Net\Protocol\Packet.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Net\Protocol\PacketAccept.cs" Link="Net\Protocol\PacketAccept.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Net\Protocol\PacketHeartBeat.cs" Link="Net\Protocol\PacketHeartBeat.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Net\Protocol\Serializable.cs" Link="Net\Protocol\Serializable.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Net\ReceivedData.cs" Link="Net\ReceivedData.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Net\SocketEvent.cs" Link="Net\SocketEvent.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Net\StreamBuffer.cs" Link="Net\StreamBuffer.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Net\TCPClient.cs" Link="Net\TCPClient.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Net\TCPServer.cs" Link="Net\TCPServer.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Net\TCPUserToken.cs" Link="Net\TCPUserToken.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Net\UserTokenPool.cs" Link="Net\UserTokenPool.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Net\WebClient.cs" Link="Net\WebClient.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Structure\SwitchQueue.cs" Link="Structure\SwitchQueue.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Xml\XML.cs" Link="Xml\XML.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Xml\XMLIterator.cs" Link="Xml\XMLIterator.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Xml\XMLList.cs" Link="Xml\XMLList.cs" />
+    <Compile Include="..\..\..\RCFramework\Core\Xml\XMLUtils.cs" Link="Xml\XMLUtils.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\Lib\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="FMath\" />
+    <Folder Include="Math\" />
+    <Folder Include="Misc\" />
+    <Folder Include="Net\Kcp\" />
+    <Folder Include="Net\Protocol\" />
+    <Folder Include="Structure\" />
+    <Folder Include="Xml\" />
+  </ItemGroup>
+
+</Project>

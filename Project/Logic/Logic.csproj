@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DE231F8A-35C7-4E6B-865C-2BA03E3835DF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Logic</RootNamespace>
+    <AssemblyName>Logic</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Core">
+      <HintPath>..\Lib\Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attr.cs" />
+    <Compile Include="Battle.cs" />
+    <Compile Include="Buff.cs" />
+    <Compile Include="BuffData.cs" />
+    <Compile Include="BuffManager.cs" />
+    <Compile Include="Champion.cs" />
+    <Compile Include="Collider.cs" />
+    <Compile Include="Defs.cs" />
+    <Compile Include="EffectData.cs" />
+    <Compile Include="Entity.cs" />
+    <Compile Include="EntityConstructParams.cs" />
+    <Compile Include="EntityData.cs" />
+    <Compile Include="EntityManager.cs" />
+    <Compile Include="Event\BaseEvent.cs" />
+    <Compile Include="Event\EventCenter.cs" />
+    <Compile Include="Event\SyncEvent.cs" />
+    <Compile Include="FSM\Actions\AbsAction.cs" />
+    <Compile Include="FSM\Actions\ChampionAction.cs" />
+    <Compile Include="FSM\Actions\IAction.cs" />
+    <Compile Include="FSM\Actions\LDead.cs" />
+    <Compile Include="FSM\Actions\LIdle.cs" />
+    <Compile Include="FSM\Actions\LMove.cs" />
+    <Compile Include="FSM\FiniteStateMachine.cs" />
+    <Compile Include="FSM\FSMState.cs" />
+    <Compile Include="GPool.cs" />
+    <Compile Include="GPoolObject.cs" />
+    <Compile Include="Item.cs" />
+    <Compile Include="ITrigger.cs" />
+    <Compile Include="MapData.cs" />
+    <Compile Include="Map\ITileObject.cs" />
+    <Compile Include="Map\Tile.cs" />
+    <Compile Include="Map\Maze.cs" />
+    <Compile Include="Misc\HashtableHelper.cs" />
+    <Compile Include="Misc\Utils.cs" />
+    <Compile Include="ModelFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rail.cs" />
+    <Compile Include="StartCountDown.cs" />
+    <Compile Include="SyncAttribute.cs" />
+    <Compile Include="TargetType.cs" />
+    <Compile Include="Terminus.cs" />
+    <Compile Include="UpdateContext.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>$(ProjectDir)r.bat $(TargetDir) $(TargetName)</PostBuildEvent>
+  </PropertyGroup>
+</Project>

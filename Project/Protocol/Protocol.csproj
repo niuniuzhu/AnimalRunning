@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{85EB3F0A-3E62-4C79-9E3D-46E29E8F31EE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Protocol</RootNamespace>
+    <AssemblyName>Protocol</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Core">
+      <HintPath>..\Lib\Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Gen\ProtocolConsts.cs" />
+    <Compile Include="Gen\ProtocolManager.cs" />
+    <Compile Include="Gen\_DTO_account.cs" />
+    <Compile Include="Gen\_DTO_action_info.cs" />
+    <Compile Include="Gen\_DTO_begin_fight.cs" />
+    <Compile Include="Gen\_DTO_bool.cs" />
+    <Compile Include="Gen\_DTO_byte.cs" />
+    <Compile Include="Gen\_DTO_charactor.cs" />
+    <Compile Include="Gen\_DTO_double.cs" />
+    <Compile Include="Gen\_DTO_enter_battle.cs" />
+    <Compile Include="Gen\_DTO_float.cs" />
+    <Compile Include="Gen\_DTO_frame_info.cs" />
+    <Compile Include="Gen\_DTO_int.cs" />
+    <Compile Include="Gen\_DTO_long.cs" />
+    <Compile Include="Gen\_DTO_player_info.cs" />
+    <Compile Include="Gen\_DTO_reply.cs" />
+    <Compile Include="Gen\_DTO_request_room_list.cs" />
+    <Compile Include="Gen\_DTO_room_info.cs" />
+    <Compile Include="Gen\_DTO_room_info_detail.cs" />
+    <Compile Include="Gen\_DTO_room_list.cs" />
+    <Compile Include="Gen\_DTO_short.cs" />
+    <Compile Include="Gen\_DTO_string.cs" />
+    <Compile Include="Gen\_DTO_sync_time.cs" />
+    <Compile Include="Gen\_DTO_uint.cs" />
+    <Compile Include="Gen\_DTO_ulong.cs" />
+    <Compile Include="Gen\_DTO_ushort.cs" />
+    <Compile Include="Gen\_PACKET_BATTLE_ACMD_BATTLE_END.cs" />
+    <Compile Include="Gen\_PACKET_BATTLE_ACMD_BATTLE_START.cs" />
+    <Compile Include="Gen\_PACKET_BATTLE_ACMD_ENTER_BATTLE.cs" />
+    <Compile Include="Gen\_PACKET_BATTLE_ACMD_FRAME.cs" />
+    <Compile Include="Gen\_PACKET_BATTLE_QCMD_ACTION.cs" />
+    <Compile Include="Gen\_PACKET_BATTLE_QCMD_BATTLE_CREATED.cs" />
+    <Compile Include="Gen\_PACKET_BATTLE_QCMD_END_BATTLE.cs" />
+    <Compile Include="Gen\_PACKET_BATTLE_QCMD_LEAVE_BATTLE.cs" />
+    <Compile Include="Gen\_PACKET_GENERIC_ACMD_REPLY.cs" />
+    <Compile Include="Gen\_PACKET_GENERIC_ACMD_SYNC_TIME.cs" />
+    <Compile Include="Gen\_PACKET_GENERIC_QCMD_SYNC_TIME.cs" />
+    <Compile Include="Gen\_PACKET_HALL_ACMD_BRO_ROOM_CREATED.cs" />
+    <Compile Include="Gen\_PACKET_HALL_ACMD_BRO_ROOM_DESTROIED.cs" />
+    <Compile Include="Gen\_PACKET_HALL_ACMD_JOIN_ROOM.cs" />
+    <Compile Include="Gen\_PACKET_HALL_ACMD_ROOM_LIST.cs" />
+    <Compile Include="Gen\_PACKET_HALL_QCMD_CREATE_ROOM.cs" />
+    <Compile Include="Gen\_PACKET_HALL_QCMD_JOIN_ROOM.cs" />
+    <Compile Include="Gen\_PACKET_HALL_QCMD_ROOM_LIST.cs" />
+    <Compile Include="Gen\_PACKET_ROOM_ACMD_BEGIN_FIGHT.cs" />
+    <Compile Include="Gen\_PACKET_ROOM_ACMD_LEAVE_ROOM.cs" />
+    <Compile Include="Gen\_PACKET_ROOM_ACMD_ROOM_INFO.cs" />
+    <Compile Include="Gen\_PACKET_ROOM_QCMD_ADD_FIGHT_READY.cs" />
+    <Compile Include="Gen\_PACKET_ROOM_QCMD_BEGIN_FIGHT.cs" />
+    <Compile Include="Gen\_PACKET_ROOM_QCMD_CHANGE_HERO.cs" />
+    <Compile Include="Gen\_PACKET_ROOM_QCMD_CHANGE_MAP.cs" />
+    <Compile Include="Gen\_PACKET_ROOM_QCMD_CHANGE_MODEL.cs" />
+    <Compile Include="Gen\_PACKET_ROOM_QCMD_CHANGE_SKIN.cs" />
+    <Compile Include="Gen\_PACKET_ROOM_QCMD_CHANGE_TEAM.cs" />
+    <Compile Include="Gen\_PACKET_ROOM_QCMD_LEAVE_ROOM.cs" />
+    <Compile Include="Gen\_PACKET_ROOM_QCMD_MAP_READY.cs" />
+    <Compile Include="Gen\_PACKET_ROOM_QCMD_REMOVE_FIGHT_READY.cs" />
+    <Compile Include="Gen\_PACKET_ROOM_QCMD_ROOM_INFO.cs" />
+    <Compile Include="Gen\_PACKET_USER_ACMD_USER_INFOS.cs" />
+    <Compile Include="Gen\_PACKET_USER_ACMD_USER_ONLINE.cs" />
+    <Compile Include="Gen\_PACKET_USER_QCMD_CREATE_USER.cs" />
+    <Compile Include="Gen\_PACKET_USER_QCMD_LOGIN.cs" />
+    <Compile Include="Gen\_PACKET_USER_QCMD_REG.cs" />
+    <Compile Include="Gen\_PACKET_USER_QCMD_USER_INFOS.cs" />
+    <Compile Include="Gen\_PACKET_USER_QCMD_USER_ONLINE.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProtocolResult.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>$(ProjectDir)r.bat $(TargetDir) $(TargetName)</PostBuildEvent>
+  </PropertyGroup>
+</Project>

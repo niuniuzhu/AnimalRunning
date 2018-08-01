@@ -1,0 +1,9 @@
+<linker>
+	<assembly fullname="Core" preserve="all"/>
+	<assembly fullname="Game" preserve="all"/>
+	<assembly fullname="FairyUGUI" preserve="all"/>
+	<assembly fullname="Client" preserve="all"/>
+	<assembly fullname="Logic" preserve="all"/>
+	<assembly fullname="View" preserve="all"/>
+	<assembly fullname="Protocol" preserve="all"/>
+</linker>

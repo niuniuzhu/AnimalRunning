@@ -1,0 +1,217 @@
+{
+    "maps": {
+        "default": {
+            "start_count_down": 5,
+            "row": 20,
+            "col": 20,
+            "scale": [2, 1, 2],
+            "offset": [0, 0, 0],
+            "start_index": -1,
+            "end_index": -1,
+            "start_point_place": [2, 2],
+            "FOW_distance_to_player": 10,
+            "FOW_fog_frequency": 12,
+            "FOW_fog_amplitude": 0.01,
+            "cam_offset": [0, 18, -10],
+            "cam_lookat_offset": [0, 0.7, 0],
+            "cam_smooth": 0.4,
+            "count_down_snd":"daojishi",
+            "win_snd":"win",
+            "lose_snd":"fail",
+            "items": ["i0", "i1", "i2", "i3"],
+            "max_item_count": 16,
+            "item_update_interval": [5, 8],
+            "bg_snd":"bg_water"
+        },
+        "m1": {
+            "name": "测试",
+            "surface_mat":"m1"
+        },
+        "m2": {
+            "name": "测试2",
+            "surface_mat":"m2"
+        },
+        "m3": {
+            "name": "测试3",
+            "surface_mat":"m3"
+        },
+        "m4": {
+            "name": "测试4",
+            "surface_mat":"m4"
+        },
+        "m5": {
+            "name": "测试5",
+            "surface_mat":"m5"
+        },
+        "m6": {
+            "name": "测试6",
+            "surface_mat":"m6"
+        },
+        "m7": {
+            "name": "测试7",
+            "surface_mat":"m7"
+        },
+        "m8": {
+            "name": "测试8",
+            "surface_mat":"m8"
+        },
+        "m9": {
+            "name": "测试9",
+            "surface_mat":"m9"
+        },
+        "m10": {
+            "name": "测试10",
+            "surface_mat":"m10"
+        },
+        "m11": {
+            "name": "测试11",
+            "surface_mat":"m11"
+        }
+    },
+    "entities": {
+        "default": {
+            "size": [
+                0.3,
+                0.3,
+                0.3
+            ],
+            "natural_speed": 2,
+            "fov": 2.8
+        },
+        "_c0": {
+            "size": [
+                4,
+                1,
+                0.5
+            ],
+            "name": "围栏1",
+            "model": "c0"
+        },
+        "_c0_1": {
+            "size": [
+                0.5,
+                1,
+                4
+            ],
+            "name": "围栏2",
+            "model": "c0"
+        },
+        "_c0_2":{
+            "trigger_raduis": 1,
+            "name": "终点",
+            "model": "exit"
+        },
+        "c1": {
+            "name": "鱼",
+            "model": "yu"
+        },
+        "c2": {
+            "name": "马",
+            "model": "ma"
+        },
+        "c3": {
+            "name": "熊",
+            "model": "xiong"
+        },
+        "c4": {
+            "name": "恐龙",
+            "model": "konglong"
+        },
+        "c5": {
+            "name": "企鹅",
+            "model": "qie"
+        },
+        "i0": {
+            "name": "加速球",
+            "model": "i0",
+            "trigger_raduis": 0.7,
+            "icon": "i0",
+            "trigger": {
+                "buff": "b0",
+                "radius": 0,
+                "target_type": 0,
+                "trigger_count": 1
+            }
+        },
+        "i1": {
+            "name": "火炬",
+            "model": "i1",
+            "trigger_raduis": 0.7,
+            "icon": "i1",
+            "trigger": {
+                "buff": "b1",
+                "radius": 0,
+                "target_type": 0,
+                "trigger_count": 1
+            }
+        },
+        "i2": {
+            "name": "减速球",
+            "model": "i2",
+            "trigger_raduis": 0.7,
+            "icon": "i2",
+            "trigger": {
+                "buff": "b2",
+                "radius": 2.6,
+                "target_type": 3,
+                "trigger_count": 1
+            }
+        },
+        "i3": {
+            "name": "烟幕",
+            "model": "i3",
+            "trigger_raduis": 0.7,
+            "icon": "i3",
+            "trigger": {
+                "buff": "b3",
+                "radius": 9999,
+                "target_type": 3,
+                "trigger_count": -1
+            }
+        }
+    },
+    "buffs": {
+        "b0": {
+            "conflicts":["b0","b2"],
+            "attrs": [9],
+            "values": [1.5],
+            "duration": 3,
+            "fx":"e0",
+            "snd":"b0"
+        },
+        "b1": {
+            "conflicts":["b1","b3"],
+            "attrs": [52],
+            "values": [1.6],
+            "duration": 5,
+            "snd":"b1"
+        },
+        "b2": {
+            "conflicts":["b2","b0"],
+            "attrs": [9],
+            "values": [0.6],
+            "duration": 3,
+            "fx":"e2",
+            "snd":"b2"
+        },
+        "b3": {
+            "conflicts":["b3","b1"],
+            "attrs": [52],
+            "values": [0.4],
+            "duration": 5,
+            "snd":"b3"
+        }
+    },
+    "effects":{
+        "e0":{
+            "model":"e0",
+            "track_mode":3,
+            "dissipating_mode":2
+        },
+        "e2":{
+            "model":"e2",
+            "track_mode":3,
+            "dissipating_mode":2
+        }
+    }
+}

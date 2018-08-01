@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F89E094E-1B7E-424F-B808-C77AD2155B5C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Client</RootNamespace>
+    <AssemblyName>Client</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Bin\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;KCP_NATIVE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Bin\</OutputPath>
+    <DefineConstants>TRACE;KCP_NATIVE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Core">
+      <HintPath>..\Lib\Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>..\Lib\DOTween.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="FairyUGUI">
+      <HintPath>..\Lib\FairyUGUI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Game">
+      <HintPath>..\Lib\Game.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine">
+      <HintPath>..\Lib\UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BattleManager.cs" />
+    <Compile Include="CUser.cs" />
+    <Compile Include="Entry.cs" />
+    <Compile Include="Env.cs" />
+    <Compile Include="FrameActionManager.cs" />
+    <Compile Include="FrameActionType.cs" />
+    <Compile Include="Net\BufferPool.cs" />
+    <Compile Include="Net\CMDListener.cs" />
+    <Compile Include="Net\NetModule.cs" />
+    <Compile Include="Net\PResultUtils.cs" />
+    <Compile Include="Net\SerializeUtil.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Standalone.cs" />
+    <Compile Include="UI\CustomGLoader.cs" />
+    <Compile Include="UI\GestureStateOne.cs" />
+    <Compile Include="UI\HUD.cs" />
+    <Compile Include="UI\HUDManager.cs" />
+    <Compile Include="UI\IUIModule.cs" />
+    <Compile Include="UI\UIBattle.cs" />
+    <Compile Include="UI\UIHall.cs" />
+    <Compile Include="UI\UILoadLevel.cs" />
+    <Compile Include="UI\UILogin.cs" />
+    <Compile Include="UI\UIManager.cs" />
+    <Compile Include="UI\UIRoom.cs" />
+    <Compile Include="UI\Wins\AlertWin.cs" />
+    <Compile Include="UI\Wins\ConfirmWin.cs" />
+    <Compile Include="UI\Wins\ConnectingWin.cs" />
+    <Compile Include="UI\Wins\CreateRoomWin.cs" />
+    <Compile Include="UI\Wins\Windows.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Logic\Logic.csproj">
+      <Project>{de231f8a-35c7-4e6b-865c-2ba03e3835df}</Project>
+      <Name>Logic</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Protocol\Protocol.csproj">
+      <Project>{85eb3f0a-3e62-4c79-9e3d-46e29e8f31ee}</Project>
+      <Name>Protocol</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\View\View.csproj">
+      <Project>{78c31057-70d3-4a97-ad85-12924a46a39b}</Project>
+      <Name>View</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>$(ProjectDir)r.bat $(TargetDir) $(TargetName)</PostBuildEvent>
+  </PropertyGroup>
+</Project>
